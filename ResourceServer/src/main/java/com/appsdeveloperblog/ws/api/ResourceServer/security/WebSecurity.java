@@ -13,7 +13,9 @@ public class WebSecurity  {
         http
                 .authorizeHttpRequests()
                 .requestMatchers(HttpMethod.GET, "/api/v1/users/status/check")
-                .hasAuthority("SCOPE_profile")
+                //.hasAuthority("SCOPE_profile")
+                //.hasAnyRole("developer", "user", "admin")
+                .hasRole("developer")
                 .anyRequest().authenticated()
                 .and()
                 .oauth2ResourceServer()

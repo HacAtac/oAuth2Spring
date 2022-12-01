@@ -119,5 +119,7 @@ token isn't fake and valid.
 
 ### Implementing OAuth2 in Spring Boot
 
--- Spring Boot Starter Wit
+-- Spring Boot Starter With OAuth package
+ 
+ - Basically what needs to happen is 
 
