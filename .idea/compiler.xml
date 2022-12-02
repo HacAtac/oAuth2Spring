@@ -9,15 +9,18 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ResourceServer" />
         <module name="hacatac.OAuth2" />
+        <module name="ApiGateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ApiGateway" target="17" />
       <module name="hacatac.OAuth2" target="17" />
       <module name="ResourceServer" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ApiGateway" options="-parameters" />
       <module name="ResourceServer" options="-parameters" />
       <module name="hacatac.OAuth2" options="-parameters" />
     </option>
