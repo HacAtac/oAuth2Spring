@@ -4,8 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ApiGateway/ApiGateway.iml" filepath="$PROJECT_DIR$/ApiGateway/ApiGateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/ResourceServer/ResourceServer.iml" filepath="$PROJECT_DIR$/ResourceServer/ResourceServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Albums-Resource-Server-Albums-Resource-Server-Before-Eureka-Client/albums.iml" filepath="$PROJECT_DIR$/Albums-Resource-Server-Albums-Resource-Server-Before-Eureka-Client/albums.iml" />
       <module fileurl="file://$PROJECT_DIR$/hacatac.OAuth2/hacatac.OAuth2.iml" filepath="$PROJECT_DIR$/hacatac.OAuth2/hacatac.OAuth2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/oAuth2Spring.iml" filepath="$PROJECT_DIR$/.idea/oAuth2Spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Photos-Resource-Server-Photos-Resource-Server-Before-Eureka-Client/photos.iml" filepath="$PROJECT_DIR$/Photos-Resource-Server-Photos-Resource-Server-Before-Eureka-Client/photos.iml" />
     </modules>
   </component>
 </project>
