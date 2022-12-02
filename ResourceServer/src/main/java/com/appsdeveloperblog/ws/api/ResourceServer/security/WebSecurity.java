@@ -38,7 +38,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 
-@EnableGlobalMethodSecurity(securedEnabled = true) //This annotation is used to enable @Secured annotation
+@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true) //This annotation is used to enable @Secured annotation, @PreAuthorize and @PostAuthorize
 @EnableWebSecurity
 public class WebSecurity  {
     @Bean //bean means that this method will return an object that will be managed by Spring and will be available for injection into other classes
@@ -52,7 +52,7 @@ public class WebSecurity  {
                 .requestMatchers(HttpMethod.GET, "/users/status/check")
                 //.hasAuthority("SCOPE_profile")
                 .hasRole("developer")
-                //.hasAnyRole("devleoper","user")
+                //.hasAnyRole("developer","user")
                 .anyRequest().authenticated()
                 .and()
                 .oauth2ResourceServer()
