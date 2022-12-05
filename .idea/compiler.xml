@@ -11,8 +11,8 @@
         <module name="ResourceServer" />
         <module name="DiscoveryService" />
         <module name="photos" />
-        <module name="hacatac.OAuth2" />
         <module name="ApiGateway" />
+        <module name="hacatac.OAuth2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
