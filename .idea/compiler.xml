@@ -7,12 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="NewSpringAuthorizationServer" />
         <module name="albums" />
+        <module name="hacatac.OAuth2" />
         <module name="ResourceServer" />
         <module name="DiscoveryService" />
         <module name="photos" />
         <module name="ApiGateway" />
-        <module name="hacatac.OAuth2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,6 +21,7 @@
       <module name="ApiGateway" target="11" />
       <module name="DiscoveryService" target="11" />
       <module name="hacatac.OAuth2" target="17" />
+      <module name="NewSpringAuthorizationServer" target="11" />
       <module name="photos" target="11" />
       <module name="ResourceServer" target="11" />
     </bytecodeTargetLevel>
@@ -28,6 +30,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ApiGateway" options="-parameters" />
       <module name="DiscoveryService" options="-parameters" />
+      <module name="NewSpringAuthorizationServer" options="-parameters" />
       <module name="ResourceServer" options="-parameters" />
       <module name="albums" options="-parameters" />
       <module name="hacatac.OAuth2" options="-parameters" />
