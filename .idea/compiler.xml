@@ -18,10 +18,10 @@
     <bytecodeTargetLevel>
       <module name="albums" target="11" />
       <module name="ApiGateway" target="17" />
-      <module name="DiscoveryService" target="17" />
+      <module name="DiscoveryService" target="11" />
       <module name="hacatac.OAuth2" target="17" />
       <module name="photos" target="11" />
-      <module name="ResourceServer" target="17" />
+      <module name="ResourceServer" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
