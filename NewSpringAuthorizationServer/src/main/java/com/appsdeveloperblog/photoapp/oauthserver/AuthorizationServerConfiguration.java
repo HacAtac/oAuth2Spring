@@ -18,7 +18,6 @@ import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.server.authorization.client.InMemoryRegisteredClientRepository;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClient;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository;
-import org.springframework.security.oauth2.server.authorization.config.ClientSettings;
 import org.springframework.security.oauth2.server.authorization.config.ProviderSettings;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -29,6 +28,7 @@ import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.util.UUID;
 
+
 @Configuration
 public class AuthorizationServerConfiguration {
 
@@ -37,7 +37,8 @@ public class AuthorizationServerConfiguration {
 
         RegisteredClient registeredClient = RegisteredClient.withId(UUID.randomUUID().toString())
                 .clientId("client1")
-                .clientSecret("{noop}myClientSecretValue") //since giving a clientSecret value this means that it wil be a private client
+                .clientSecret("{noop}myClientSecretValue")
+                //.clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_POST)
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
@@ -45,12 +46,12 @@ public class AuthorizationServerConfiguration {
                 .redirectUri("http://127.0.0.1:8080/authorized")
                 .scope(OidcScopes.OPENID)
                 .scope("read")
-                //below commented is if you want to use a consent page || or can do .requireProofKey(true) which will force a proof of key
                 //.clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
                 .build();
 
         return new InMemoryRegisteredClientRepository(registeredClient);
     }
+
 
     @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE)
@@ -99,5 +100,9 @@ public class AuthorizationServerConfiguration {
 
         return keyPairGenerator.generateKeyPair();
     }
+
+
+
+
 
 }

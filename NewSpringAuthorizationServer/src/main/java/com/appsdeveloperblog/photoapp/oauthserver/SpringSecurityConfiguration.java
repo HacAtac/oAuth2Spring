@@ -1,5 +1,6 @@
 package com.appsdeveloperblog.photoapp.oauthserver;
 
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,25 +15,31 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @EnableWebSecurity
 public class SpringSecurityConfiguration {
-    //configure form login
+
     @Bean
     SecurityFilterChain configureSecurityFilterChain(HttpSecurity http) throws Exception {
+
         http
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest().authenticated())
                 .formLogin(Customizer.withDefaults());
+
         return http.build();
+
     }
-   //configure a user
+
+
     @Bean
-    public UserDetailsService users(){
+    public UserDetailsService users() {
 
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 
-        UserDetails user = User.withUsername("Jordan")
+        UserDetails user = User.withUsername("jordan")
                 .password(encoder.encode("password"))
                 .roles("USER")
                 .build();
 
         return new InMemoryUserDetailsManager(user);
+
     }
+
 }
